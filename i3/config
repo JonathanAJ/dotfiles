@@ -1,0 +1,325 @@
+# Custom i3WM Config by jonathanaj
+
+############################  VARIABLES  ########################## 
+
+## Any
+set $mod  Mod4
+set $mod2 Mod1
+
+set $monitor1 eDP1  #notebook
+set $monitor2 HDMI2 #hdmi
+
+set $SCRIPT_DIR ~/.scripts/
+
+## Fonts
+set $custom_font pango:Source Sans Pro
+set $custom_font_size 8
+
+## Colors
+set $color_primary		    #141C2A
+set $color_primary_light	#2B292C
+set $color_primary_dark		#141C2A
+set $color_secondary		#13AFAF
+set $color_secondary_light	#13AFAF
+set $color_secondary_dark	#13AFAF
+set $color_text			    #ffffff
+set $color_text_dark		#000000
+
+# Font for window titles and bars
+font $custom_font $custom_font_size
+
+
+############################ DEFAULT BINDS #########################
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+ccedilla focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ccedilla move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout toggle tabbed stacking
+#bindsym $mod+t layout tabbed 
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart; xec "killall dunst"
+
+# kill focused window
+bindsym $mod+w kill
+
+
+################################ WORKSPACES ######################
+
+set $ws1 " 1   srch"
+set $ws2 " 2   devs" 
+set $ws3 " 3   util"
+set $ws4 " 4   comm"
+set $ws5 " 5   mdia"
+set $ws6 " 6"
+set $ws7 " 7"
+set $ws8 " 8"
+set $ws9 " 9"
+set $ws10 "10"
+
+workspace $ws1 output $monitor1
+workspace $ws2 output $monitor1
+workspace $ws3 output $monitor1
+workspace $ws4 output $monitor1
+workspace $ws5 output $monitor1
+workspace $ws6 output $monitor1
+workspace $ws7 output $monitor1
+workspace $ws8 output $monitor1
+workspace $ws9 output $monitor1
+workspace $ws10 output $monitor1
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+##################### WORKSPACES MONITOR 2 ###############
+
+set $ws11 " 11   "
+set $ws12 " 12   " 
+set $ws13 " 13   "
+set $ws14 " 14   "
+set $ws15 " 15   "
+
+workspace $ws11 output $monitor2
+workspace $ws12 output $monitor2
+workspace $ws13 output $monitor2
+workspace $ws14 output $monitor2
+workspace $ws15 output $monitor2
+
+# switch to workspace
+bindsym $mod2+1 workspace $ws11
+bindsym $mod2+2 workspace $ws12
+bindsym $mod2+3 workspace $ws13
+bindsym $mod2+4 workspace $ws14
+bindsym $mod2+5 workspace $ws15
+
+# move focused container to workspace
+bindsym $mod2+Shift+1 move container to workspace $ws11
+bindsym $mod2+Shift+2 move container to workspace $ws12
+bindsym $mod2+Shift+3 move container to workspace $ws13
+bindsym $mod2+Shift+4 move container to workspace $ws14
+bindsym $mod2+Shift+5 move container to workspace $ws15
+
+
+##################### MODES ##############################
+
+# Resize window
+set 	$resize "  RESIZE" 
+bindsym $mod+r mode $resize
+mode 	$resize {
+        # arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+# Choose custom app
+set	    $app "  [A]NDROID | [D]ISCORD, [B]ROWSER, [E]MAIL"
+bindsym $mod+a mode $app
+mode 	$app {
+        # my custom apps
+	    bindsym a exec "/opt/android-studio/bin/studio.sh", mode "default"
+	    bindsym d exec "flatpak run com.discordapp.Discord", [class="discord"] focus, mode "default"
+	    bindsym b exec "sensible-browser", mode "default"
+	    bindsym e exec "flatpak run org.gnome.Geary", [class="Geary"] focus, mode "default"	
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+a mode "default"
+}
+
+
+##################### CUSTOM FLOATING ##### 
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Arandr"] floating enable
+
+##################### CUSTOM BINDS #####
+
+# Start a Terminal
+bindsym $mod+t 		exec "/opt/kitty/bin/kitty"
+
+# Bind Sound
+bindsym $mod+o      exec "pavucontrol"
+
+# Print
+bindsym Print 		exec "flatpak run org.flameshot.Flameshot gui"
+
+# Screen of/on
+bindsym $mod+F11 	exec "$SCRIPT_DIR/screen_off"
+
+# Keyboard RGB
+bindsym $mod+F12 	exec "$SCRIPT_DIR/keyboard_light"
+
+# Switch Window
+bindsym $mod+Tab 	exec --no-startup-id rofi -show window
+
+# Start dmenu (a program launcher)
+bindsym $mod+Return exec "rofi -show drun" 
+bindsym $mod+d 		exec "rofi -show drun"
+
+# Shutdown Menu
+bindsym $mod+Escape	exec "$SCRIPT_DIR/shutdown"
+
+# Arandr
+bindsym $mod+p      exec "arandr"
+
+###################### AUTOSTART ###########################
+
+######### ALWAYS RELOAD i3
+
+# dunst
+exec_always --no-startup-id killall dunst; notify-send -a i3 "Welcome, $USER"
+
+######### ALWAYS STARTUP i3
+
+# fibonnacci
+exec --no-startup-id        "$SCRIPT_DIR/layout_fibonnaci"
+
+# Start numlock on
+exec --no-startup-id        "numlockx on"
+
+# Start Discord
+exec --no-startup-id        "flatpak run com.discordapp.Discord"
+
+# Start Email
+exec --no-startup-id        "flatpak run org.gnome.Geary"
+
+# Sound Pulseaudio
+exec --no-startup-id        "pasystray"
+
+# Start NetworkApplet
+exec --no-startup-id        "nm-applet"
+
+# Start Redshift
+exec --no-startup-id        "redshift"
+
+##################### ASSIGN WORKSPACES ####################
+
+# search
+for_window [class="Nemo"]                   move to workspace $ws1 layout tabbed
+# devs
+for_window [class="jetbrains-studio"]       move to workspace $ws2
+# utils
+for_window [class="Postman"]                move to workspace $ws3
+# commucation
+for_window [class="discord"]                move to workspace $ws4 layout tabbed
+for_window [class="Geary"]                  move to workspace $ws4 layout tabbed
+# media
+for_window [class="vlc"]                    move to workspace $ws5
+for_window [class="Spotify"]                move to workspace $ws5
+
+###################### STYLES ##############################
+
+# class                 border                  bg	                    text       
+client.focused          $color_secondary 	    $color_secondary 	    $color_text
+client.focused_inactive $color_primary_light 	$color_primary_light 	$color_text
+client.unfocused        $color_primary_light 	$color_primary_light 	$color_text
+client.urgent           $color_secondary 	    $color_secondary        $color_text
+client.placeholder      $color_primary 		    $color_primary 		    $color_text
+client.background       $color_primary_dark
+
+# i3-gaps
+for_window [class="^.*"] border pixel 1
+#gaps inner 7
+#gaps outer -2
+
+###################### STATUS BAR ##########################
+
+# i3-blocks Bar
+bar {
+        # properties
+        position 		        top
+        status_command 		    i3blocks
+	    tray_output             primary
+	    separator_symbol        " "
+    	workspace_buttons       yes
+    	strip_workspace_numbers yes	
+    	font $custom_font 9, FontAwesome 9 
+        # variables
+	    status_command SCRIPT_DIR=$SCRIPT_DIR i3blocks                              
+	    # styles
+        colors {
+        	background  	    $color_primary
+        	statusline  	    $color_text
+        	separator	        $color_text
+        	focused_workspace   $color_secondary 		$color_secondary_dark 	$color_text_dark
+        	active_workspace    $color_primary_dark 	$color_primary_dark 	$color_text
+        	inactive_workspace  $color_primary_dark 	$color_primary_dark 	$color_text
+        	urgent_workspace    $color_secondary 		$color_secondary 	    $color_text
+            binding_mode        $color_secondary 		$color_secondary 	    $color_text
+    	}
+}

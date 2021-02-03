@@ -1,0 +1,8 @@
+[credential]
+	helper = store
+[user]
+	name = Jonathan Alves
+	email = alves_aj@windowslive.com
+[includeIf "gitdir:~/Developer/RJ/"]
+    path = ~/.gitconfig-rj
+

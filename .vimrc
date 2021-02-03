@@ -26,6 +26,8 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Theme
+packadd! dracula
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -67,6 +69,11 @@ source $VIMRUNTIME/menu.vim
 
 " Turn on the Wild menu
 set wildmenu
+
+" numberlines
+
+set relativenumber
+set number
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -127,7 +134,6 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -139,12 +145,12 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
+
 try
-    colorscheme desert
+    let g:dracula_colorterm = 0
+    colorscheme dracula
 catch
 endtry
-
-set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
