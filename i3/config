@@ -12,22 +12,24 @@ set $monitor2 HDMI2 #hdmi
 set $SCRIPT_DIR ~/.scripts/
 
 ## Fonts
-set $custom_font pango:Source Sans Pro
-set $custom_font_size 8
+set $custom_font            pango: SF Pro Display, Font Awesome 
+set $custom_font_light      Light
+set $custom_font_regular    Regular
+set $custom_font_size       11
 
 ## Colors
-set $color_primary		    #141C2A
-set $color_primary_light	#2B292C
-set $color_primary_dark		#141C2A
-set $color_secondary		#13AFAF
-set $color_secondary_light	#13AFAF
-set $color_secondary_dark	#13AFAF
-set $color_text			    #ffffff
-set $color_text_dark		#000000
+
+
+set_from_resource $transparency      color.transparency
+set_from_resource $color_primary     color.primary
+set_from_resource $color_secondary   color.secondary
+set_from_resource $color_text        color.text
+set_from_resource $color_text_dark   color.text.dark
+
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Font for window titles and bars
-font $custom_font $custom_font_size
-
+font $custom_font $custom_font_regular $custom_font_size
 
 ############################ DEFAULT BINDS #########################
 
@@ -82,7 +84,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart; xec "killall dunst"
+bindsym $mod+Shift+r restart
 
 # kill focused window
 bindsym $mod+w kill
@@ -177,23 +179,22 @@ mode 	$resize {
         bindsym Up resize shrink height 5 px or 5 ppt
         bindsym Right resize grow width 5 px or 5 ppt
 
-        # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
 
 # Choose custom app
-set	    $app "  [A]NDROID | [D]ISCORD, [B]ROWSER, [E]MAIL"
+set	    $app "  [A]NDROID | [D]ISCORD, [B]ROWSER, [E]MAIL, [F]ILES"
 bindsym $mod+a mode $app
 mode 	$app {
         # my custom apps
 	    bindsym a exec "/opt/android-studio/bin/studio.sh", mode "default"
 	    bindsym d exec "flatpak run com.discordapp.Discord", [class="discord"] focus, mode "default"
 	    bindsym b exec "sensible-browser", mode "default"
-	    bindsym e exec "flatpak run org.gnome.Geary", [class="Geary"] focus, mode "default"	
+	    bindsym e exec "flatpak run org.gnome.Geary", [class="Geary"] focus, mode "default"
+        bindsym f exec "nemo", [class="Nemo"] focus, mode "default"
 
-        # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+a mode "default"
@@ -206,36 +207,40 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Arandr"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Gpick"] floating enable
 
 ##################### CUSTOM BINDS #####
 
-# Start a Terminal
-bindsym $mod+t 		exec "/opt/kitty/bin/kitty"
-
 # Bind Sound
-bindsym $mod+o      exec "pavucontrol"
+bindsym $mod+o      exec --no-startup-id "pavucontrol"
 
 # Print
-bindsym Print 		exec "flatpak run org.flameshot.Flameshot gui"
+bindsym Print 		exec --no-startup-id "flatpak run org.flameshot.Flameshot gui"
 
 # Screen of/on
-bindsym $mod+F11 	exec "$SCRIPT_DIR/screen_off"
+bindsym $mod+F11 	exec --no-startup-id "$SCRIPT_DIR/screen_off"
 
 # Keyboard RGB
-bindsym $mod+F12 	exec "$SCRIPT_DIR/keyboard_light"
+bindsym $mod+F12 	exec --no-startup-id "$SCRIPT_DIR/keyboard_light"
 
 # Switch Window
 bindsym $mod+Tab 	exec --no-startup-id rofi -show window
 
+# Start a Terminal
+bindsym $mod+t 		exec --no-startup-id i3-sensible-terminal
+
+# terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+
 # Start dmenu (a program launcher)
-bindsym $mod+Return exec "rofi -show drun" 
-bindsym $mod+d 		exec "rofi -show drun"
+bindsym $mod+d 		exec --no-startup-id "rofi -show drun"
 
 # Shutdown Menu
-bindsym $mod+Escape	exec "$SCRIPT_DIR/shutdown"
+bindsym $mod+Escape	exec --no-startup-id "$SCRIPT_DIR/shutdown"
 
 # Arandr
-bindsym $mod+p      exec "arandr"
+bindsym $mod+p      exec --no-startup-id "arandr"
 
 ###################### AUTOSTART ###########################
 
@@ -243,6 +248,9 @@ bindsym $mod+p      exec "arandr"
 
 # dunst
 exec_always --no-startup-id killall dunst; notify-send -a i3 "Welcome, $USER"
+exec_always --no-startup-id xrdb ~/.Xresources
+exec_always --no-startup-id compton
+
 
 ######### ALWAYS STARTUP i3
 
@@ -285,17 +293,20 @@ for_window [class="Spotify"]                move to workspace $ws5
 ###################### STYLES ##############################
 
 # class                 border                  bg	                    text       
-client.focused          $color_secondary 	    $color_secondary 	    $color_text
-client.focused_inactive $color_primary_light 	$color_primary_light 	$color_text
-client.unfocused        $color_primary_light 	$color_primary_light 	$color_text
+client.focused          $color_secondary 	    $color_secondary 	    $color_text_dark
+client.focused_inactive $color_primary          $color_primary       	$color_text
+client.unfocused        $color_primary          $color_primary       	$color_text
 client.urgent           $color_secondary 	    $color_secondary        $color_text
 client.placeholder      $color_primary 		    $color_primary 		    $color_text
-client.background       $color_primary_dark
+client.background       $color_primary
 
 # i3-gaps
-for_window [class="^.*"] border pixel 1
-#gaps inner 7
-#gaps outer -2
+for_window [class="^.*"] border pixel 1.5
+gaps inner 4
+gaps outer 1
+smart_borders on
+smart_gaps inverse_outer
+
 
 ###################### STATUS BAR ##########################
 
@@ -303,23 +314,24 @@ for_window [class="^.*"] border pixel 1
 bar {
         # properties
         position 		        top
+        i3bar_command           i3bar -t
         status_command 		    i3blocks
 	    tray_output             primary
 	    separator_symbol        " "
     	workspace_buttons       yes
     	strip_workspace_numbers yes	
-    	font $custom_font 9, FontAwesome 9 
+    	font $custom_font $custom_font_light $custom_font_size 
         # variables
 	    status_command SCRIPT_DIR=$SCRIPT_DIR i3blocks                              
 	    # styles
         colors {
-        	background  	    $color_primary
+        	background  	    $transparency 
         	statusline  	    $color_text
         	separator	        $color_text
-        	focused_workspace   $color_secondary 		$color_secondary_dark 	$color_text_dark
-        	active_workspace    $color_primary_dark 	$color_primary_dark 	$color_text
-        	inactive_workspace  $color_primary_dark 	$color_primary_dark 	$color_text
-        	urgent_workspace    $color_secondary 		$color_secondary 	    $color_text
+        	focused_workspace   $transparency           $transparency           $color_secondary	
+        	active_workspace    $transparency           $transparency           $color_text
+        	inactive_workspace  $transparency           $transparency           $color_text
+            urgent_workspace    $color_secondary 		$color_secondary 	    $color_text
             binding_mode        $color_secondary 		$color_secondary 	    $color_text
     	}
 }

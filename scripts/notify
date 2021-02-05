@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
 
 import subprocess
-subprocess.run(["/usr/bin/notify-send", "--icon=error", "This is your error message ..."])
+import sys
+
+subprocess.run([
+    "/usr/bin/notify-send",
+    sys.argv[1]]
+) 

@@ -5,10 +5,9 @@ separator_block_width=10
 markup=pango
 align=center
 
-
 [time]
 label= 
-command=date '+%H:%M    %d/%m'
+command=date '+%d/%m   %H:%M '
 interval=5
 
 [click]
