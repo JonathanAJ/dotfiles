@@ -248,8 +248,15 @@ bindsym $mod+p      exec --no-startup-id "arandr"
 
 # dunst
 exec_always --no-startup-id killall dunst; notify-send -a i3 "Welcome, $USER"
+
+# resources
 exec_always --no-startup-id xrdb ~/.Xresources
+
+#compton
 exec_always --no-startup-id compton
+
+#feh
+exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 
 
 ######### ALWAYS STARTUP i3
