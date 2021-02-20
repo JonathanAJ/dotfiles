@@ -12,6 +12,7 @@
     ~/.vimrc: .vimrc
     ~/.Xresources: .Xresources
     ~/.p10k.zsh: .p10k.zsh
+    ~/.xinitrc: .xinitrc
 
     # config
     ~/.config/i3/config: i3/config

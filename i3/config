@@ -6,8 +6,8 @@
 set $mod  Mod4
 set $mod2 Mod1
 
-set $monitor1 eDP1  #notebook
-set $monitor2 HDMI2 #hdmi
+set $monitor1 HDMI2 #monitor
+set $monitor2 eDP1  #notebook
 
 set $SCRIPT_DIR ~/.scripts/
 
