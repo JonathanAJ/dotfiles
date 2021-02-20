@@ -36,5 +36,9 @@
     ~/.screenlayout/monitor-left.sh: screenlayout/monitor-left.sh
     ~/.vim: vim
 
+    #code
+    ~/.config/Code/User/settings.json: code/settings.json
+
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
