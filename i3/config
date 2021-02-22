@@ -216,7 +216,7 @@ for_window [class="Gpick"] floating enable
 bindsym $mod+o      exec --no-startup-id "pavucontrol"
 
 # Print
-bindsym Print 		exec --no-startup-id "flatpak run org.flameshot.Flameshot gui"
+bindsym Print 		exec --no-startup-id "flameshot gui"
 
 # Screen of/on
 bindsym $mod+F11 	exec --no-startup-id "$SCRIPT_DIR/screen_off"
@@ -261,6 +261,9 @@ exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 
 ######### ALWAYS STARTUP i3
 
+# keyboard
+exec --no-startup-id        "setxkbmap -model abnt2 -layout br -variant abnt2"
+
 # fibonnacci
 exec --no-startup-id        "$SCRIPT_DIR/layout_fibonnaci"
 
@@ -268,10 +271,10 @@ exec --no-startup-id        "$SCRIPT_DIR/layout_fibonnaci"
 exec --no-startup-id        "numlockx on"
 
 # Start Discord
-exec --no-startup-id        "flatpak run com.discordapp.Discord"
+exec --no-startup-id        "discord"
 
 # Start Email
-exec --no-startup-id        "flatpak run org.gnome.Geary"
+exec --no-startup-id        "geary"
 
 # Sound Pulseaudio
 exec --no-startup-id        "pasystray"

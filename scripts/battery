@@ -46,10 +46,10 @@ else:
     else:
         percentleft = 0
 
-    FA_LIGHTNING =      "<span font='FontAwesome' color='{color}'></span>"
-    FA_BATTERY_HALF =   "<span font='FontAwesome' color='{color}'> </span>"
-    FA_BATTERY =        "<span font='FontAwesome' color='{color}'> </span>"
-    FA_QUESTION =       "<span font='FontAwesome' color='{color}'></span>"
+    FA_LIGHTNING =      "<span font='FontAwesome' color='{color}'></span> "
+    FA_BATTERY_HALF =   "<span font='FontAwesome' color='{color}'> </span> "
+    FA_BATTERY =        "<span font='FontAwesome' color='{color}'> </span> "
+    FA_QUESTION =       "<span font='FontAwesome' color='{color}'></span> "
 
     if state == "Discharging":
         icon = FA_BATTERY_HALF
