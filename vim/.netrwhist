@@ -1,3 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/jonathanaj/Developer/RJ/MobileToolsRJ/src'
+let g:netrw_dirhist_4='/home/jonathanaj/Developer/RJ/MobileToolsRJ'
+let g:netrw_dirhist_3='/home/jonathanaj/Developer/RJ'
+let g:netrw_dirhist_2='/home/jonathanaj/Developer'
 let g:netrw_dirhist_1='/home/jonathanaj/.config/i3'

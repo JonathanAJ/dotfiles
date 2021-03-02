@@ -18,8 +18,6 @@ set $custom_font_regular    Regular
 set $custom_font_size       11
 
 ## Colors
-
-
 set_from_resource $transparency      color.transparency
 set_from_resource $color_primary     color.primary
 set_from_resource $color_secondary   color.secondary
@@ -166,6 +164,10 @@ bindsym $mod2+Shift+3 move container to workspace $ws13
 bindsym $mod2+Shift+4 move container to workspace $ws14
 bindsym $mod2+Shift+5 move container to workspace $ws15
 
+##################### MOVE WORKSPACES ####################
+
+bindsym $mod+Tab            workspace back_and_forth 
+bindsym $mod+Shift+Tab      workspace next
 
 ##################### MODES ##############################
 
@@ -190,16 +192,15 @@ bindsym $mod+a mode $app
 mode 	$app {
         # my custom apps
 	    bindsym a exec "/opt/android-studio/bin/studio.sh", mode "default"
-	    bindsym d exec "flatpak run com.discordapp.Discord", [class="discord"] focus, mode "default"
+	    bindsym d exec "discord", [class="discord"] focus, mode "default"
 	    bindsym b exec "sensible-browser", mode "default"
-	    bindsym e exec "flatpak run org.gnome.Geary", [class="Geary"] focus, mode "default"
+	    bindsym e exec "geary", [class="Geary"] focus, mode "default"
         bindsym f exec "nemo", [class="Nemo"] focus, mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+a mode "default"
 }
-
 
 ##################### CUSTOM FLOATING ##### 
 
@@ -224,20 +225,17 @@ bindsym $mod+F11 	exec --no-startup-id "$SCRIPT_DIR/screen_off"
 # Keyboard RGB
 bindsym $mod+F12 	exec --no-startup-id "$SCRIPT_DIR/keyboard_light"
 
-# Switch Window
-bindsym $mod+Tab 	exec --no-startup-id rofi -show window
+# Shutdown Menu
+bindsym $mod+Escape	exec --no-startup-id "$SCRIPT_DIR/shutdown"
 
 # Start a Terminal
-bindsym $mod+t 		exec --no-startup-id i3-sensible-terminal
+bindsym $mod+t 		exec --no-startup-id "i3-sensible-terminal"
 
 # terminal
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id "i3-sensible-terminal"
 
 # Start dmenu (a program launcher)
 bindsym $mod+d 		exec --no-startup-id "rofi -show drun"
-
-# Shutdown Menu
-bindsym $mod+Escape	exec --no-startup-id "$SCRIPT_DIR/shutdown"
 
 # Arandr
 bindsym $mod+p      exec --no-startup-id "arandr"
@@ -247,25 +245,30 @@ bindsym $mod+p      exec --no-startup-id "arandr"
 ######### ALWAYS RELOAD i3
 
 # dunst
-exec_always --no-startup-id killall dunst; notify-send -a i3 "Welcome, $USER"
+exec_always --no-startup-id         "killall dunst; notify-send -a i3 \"Welcome, $USER\""
 
 # resources
-exec_always --no-startup-id xrdb ~/.Xresources
+exec_always --no-startup-id         "xrdb ~/.Xresources"
 
 #compton
-exec_always --no-startup-id compton
+exec_always --no-startup-id         "compton"
 
 #feh
-exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
+exec_always --no-startup-id         "feh --bg-scale ~/.wallpaper.jpg"
 
+# fibonnacci
+exec_always --no-startup-id         "$SCRIPT_DIR/layout_fibonnaci"
 
 ######### ALWAYS STARTUP i3
 
+# brightness hdmi
+exec --no-startup-id        "xrandr --output HDMI2 --brightness 1"
+
+# pulseaudio
+exec --no-startup-id        "pulseaudio --start"
+
 # keyboard
 exec --no-startup-id        "setxkbmap -model abnt2 -layout br -variant abnt2"
-
-# fibonnacci
-exec --no-startup-id        "$SCRIPT_DIR/layout_fibonnaci"
 
 # Start numlock on
 exec --no-startup-id        "numlockx on"
@@ -279,28 +282,32 @@ exec --no-startup-id        "geary"
 # Sound Pulseaudio
 exec --no-startup-id        "pasystray"
 
-# Start NetworkApplet
-exec --no-startup-id        "nm-applet"
-
-# Start Redshift
-exec --no-startup-id        "redshift"
-
 ##################### ASSIGN WORKSPACES ####################
 
-# search
+# 1) search
 for_window [class="Nemo"]                   move to workspace $ws1 layout tabbed
-# devs
-for_window [class="jetbrains-studio"]       move to workspace $ws2
-# utils
+for_window [class="Vivaldi-stable"]         move to workspace $ws1 layout tabbed
+
+# 2) devs
+for_window [class="jetbrains-studio"]       move to workspace $ws2 layout tabbed
+
+# 3) utils
 for_window [class="Postman"]                move to workspace $ws3
-# commucation
+
+# 4) commucation
 for_window [class="discord"]                move to workspace $ws4 layout tabbed
 for_window [class="Geary"]                  move to workspace $ws4 layout tabbed
-# media
+for_window [class="TelegramDesktop"]        move to workspace $ws4 layout tabbed
+
+# 5) media
 for_window [class="vlc"]                    move to workspace $ws5
 for_window [class="Spotify"]                move to workspace $ws5
 
-###################### STYLES ##############################
+##################### CUSTOM SIZER ########################
+
+for_window [class="kitty"] resize set 33ppt
+
+##################### STYLES ##############################
 
 # class                 border                  bg	                    text       
 client.focused          $color_secondary 	    $color_secondary 	    $color_text_dark
@@ -345,3 +352,10 @@ bar {
             binding_mode        $color_secondary 		$color_secondary 	    $color_text
     	}
 }
+
+# BUG: jetbrains
+# see: https://github.com/i3/i3/issues/3233
+for_window [instance="sun-awt-X11-XWindowPeer"] focus
+for_window [class="^jetbrains-.+"][window_type=dialog] focus
+
+

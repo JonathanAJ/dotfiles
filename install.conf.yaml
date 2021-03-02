@@ -32,16 +32,18 @@
     ~/.fonts: fonts
     ~/.themes: themes
 
-    # others
-    ~/.scripts: scripts
-    ~/.gitconfig: git/.gitconfig
-    ~/.gitconfig-rj: git/.gitconfig-rj
-    ~/.screenlayout/monitor-left.sh: screenlayout/monitor-left.sh
-    ~/.vim: vim
-
     #code
     ~/.config/Code/User/settings.json: code/settings.json
 
+    #git
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitconfig-rj: git/.gitconfig-rj
+    ~/.gitconfig-personal: git/.gitconfig-personal
+
+    # others
+    ~/.scripts: scripts
+    ~/.screenlayout/monitor-left.sh: screenlayout/monitor-left.sh
+    ~/.vim: vim
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

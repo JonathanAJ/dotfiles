@@ -12,7 +12,7 @@ configuration {
     background-color: #202020cc;
     border-color: #00000000;
     text-color: #EFEFEF;
-    font: "SF Display Pro Thin 16";
+    font: "SF Display Pro Thin 18";
 }
 
 #window {

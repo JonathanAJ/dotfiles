@@ -99,9 +99,10 @@ function command_exists() {
   command -v "$1" &> /dev/null 2>&1
 }
 
-# systemctl required
-if ! command_exists systemctl ; then
-  exit 1
+# loginctl required
+if ! command_exists loginctl; then
+    echo "loginctl required!"
+    exit 1
 fi
 
 # menu defined as an associative array
@@ -109,10 +110,10 @@ typeset -A menu
 
 # Menu with keys/commands
 menu=(
-  ["1 Suspend"]="systemctl suspend"
-  ["2 Shutdown"]="systemctl poweroff"
-  ["3 Reboot"]="systemctl reboot"
-  ["4 Lock"]="i3lock-fancy -f Source-Sans-Pro"
+  ["1 Suspend"]="loginctl suspend"
+  ["2 Shutdown"]="loginctl poweroff"
+  ["3 Reboot"]="loginctl reboot"
+  ["4 Lock"]="i3lock-fancy-multimonitor"
   ["5 Logout"]="i3-msg exit"
 )
 menu_nrows=${#menu[@]}

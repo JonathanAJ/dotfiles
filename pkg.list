@@ -1,1 +1,1 @@
-xorg xorg-server xorg-xinit xorg-apps i3 xf86-video-vesa python numlockx dunst rofi neofetch kitty htop lightdm lightdm-gtk-greeter feh redshift compton arandr flameshot pulseaudio pavucontrol vlc libnotify zsh 
+xorg xorg-server xorg-xinit xorg-apps i3 xf86-video-intel python python-pip numlockx dunst rofi neofetch kitty htop feh redshift compton arandr flameshot pulseaudio pavucontrol vlc libnotify zsh android-udev android-tools 

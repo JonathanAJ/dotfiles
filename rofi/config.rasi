@@ -12,7 +12,7 @@ configuration {
     background-color: #202020cc;
     border-color: #00000000;
     text-color: #EFEFEF;
-    font: "SF Display Pro Thin 16";
+    font: "SF Display Pro Thin 18";
 }
 
 #window {
@@ -20,7 +20,6 @@ configuration {
     background-color: @transparent;
     border: 0;
     border-radius: 4px;
-    padding: 40;
     width: 80%;
     height: 80%;
 }
@@ -29,7 +28,6 @@ configuration {
     background-color: @background-color;
     children: [inputbar, listview];
     spacing: 10px;
-    /*margin: 20%;*/
     padding: 30px 20px;
     border: 1px;
     border-color: @base0D;
