@@ -7,7 +7,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 
-export JAVA_HOME=/opt/jdk1.8.0_201
+export JAVA_HOME=/opt/jdk-11
 
 export ANDROID_HOME=/opt/android-sdk
 
