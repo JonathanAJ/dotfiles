@@ -1,0 +1,16 @@
+#!/bin/sh
+
+DAY=$(date +%a)
+HOUR=$(date +%H)
+BUSSINNESS_HOUR_MAX=17
+
+case $DAY in
+    (Sat|Sun) echo TRUE: Is weekend && exit 0;;
+esac
+
+if (( $HOUR < $BUSSINNESS_HOUR_MAX ))
+then
+    echo TRUE: Is major $BUSSINNESS_HOUR_MAX hours && exit 0;
+fi
+
+exit 1;

@@ -35,10 +35,10 @@ font $custom_font $custom_font_regular $custom_font_size
 floating_modifier $mod
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+ccedilla focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -47,10 +47,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ccedilla move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -59,7 +59,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+z split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -187,14 +187,13 @@ mode 	$resize {
 }
 
 # Choose custom app
-set	    $app "  [A]NDROID | [D]ISCORD, [B]ROWSER, [E]MAIL, [F]ILES"
+set	    $app "  [A]NDROID | [D]ISCORD, [B]ROWSER, [F]ILES"
 bindsym $mod+a mode $app
 mode 	$app {
         # my custom apps
 	    bindsym a exec "/opt/android-studio/bin/studio.sh", mode "default"
 	    bindsym d exec "discord", [class="discord"] focus, mode "default"
 	    bindsym b exec "sensible-browser", mode "default"
-	    bindsym e exec "geary", [class="Geary"] focus, mode "default"
         bindsym f exec "nemo", [class="Nemo"] focus, mode "default"
 
         bindsym Return mode "default"
@@ -256,8 +255,12 @@ exec_always --no-startup-id         "compton"
 #feh
 exec_always --no-startup-id         "feh --bg-scale ~/.wallpaper.jpg"
 
+# keyboard
+exec_always --no-startup-id         "setxkbmap -model abnt2 -layout br -variant abnt2"
+
 # fibonnacci
 exec_always --no-startup-id         "$SCRIPT_DIR/layout_fibonnaci"
+
 
 ######### ALWAYS STARTUP i3
 
@@ -267,23 +270,27 @@ exec --no-startup-id        "xrandr --output HDMI2 --brightness 1"
 # pulseaudio
 exec --no-startup-id        "pulseaudio --start"
 
-# keyboard
-exec --no-startup-id        "setxkbmap -model abnt2 -layout br -variant abnt2"
-
 # Start numlock on
 exec --no-startup-id        "numlockx on"
 
-# Start Discord
-exec --no-startup-id        "discord"
-
-# Start Email
-exec --no-startup-id        "geary"
+# Start Discord if work time
+exec --no-startup-id        "$SCRIPT_DIR/is_not_work_time || discord"
 
 # Start connman ui
 exec --no-startup-id        "cmst --minimized"
 
 # Sound Pulseaudio
 exec --no-startup-id        "pasystray"
+
+##########################  VOLUME CONTROL ###########################3
+
+# Path to volume control, without trailing slash
+set $volumePath     /usr/bin/i3-volume
+set $volumeArgs     -np -t i3blocks -u SIGRTMIN+10 -s alsa_output.pci-0000_00_1b.0.analog-stereo
+
+bindsym $mod + plus     exec $volumePath $volumeArgs up 5 
+bindsym $mod + minus    exec $volumepath $volumeArgs down 5
+bindsym XF86AudioMute        exec $volumepath -mn -t $statuscmd -u $statussig
 
 ##################### ASSIGN WORKSPACES ####################
 
@@ -301,6 +308,7 @@ for_window [class="Postman"]                move to workspace $ws3
 for_window [class="discord"]                move to workspace $ws4 layout tabbed
 for_window [class="Geary"]                  move to workspace $ws4 layout tabbed
 for_window [class="TelegramDesktop"]        move to workspace $ws4 layout tabbed
+for_window [class="telegram-desktop"]       move to workspace $ws4 layout tabbed
 
 # 5) media
 for_window [class="vlc"]                    move to workspace $ws5

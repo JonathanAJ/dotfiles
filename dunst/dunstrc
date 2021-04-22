@@ -67,3 +67,7 @@
 [pa-applet]
     appname = *pa-applet*
     format = "%p"
+
+# others
+ignore_dbusclose = false
+

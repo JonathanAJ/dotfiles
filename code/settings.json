@@ -12,10 +12,27 @@
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.fontFamily": "'DejaVu Sans Mono for Powerline', 'DejaVu Sans Mono for Powerline', 'DejaVu Sans Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'DejaVu Sans Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": "'PowerlineSymbols'",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "window.menuBarVisibility": "toggle",
     "workbench.startupEditor": "newUntitledFile",
-    "terminal.explorerKind": "external"
+    "terminal.explorerKind": "external",
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "files.associations": {
+        "*.dart": "dart"
+    },
+    "dart.debugExternalLibraries": false,
+    "dart.debugSdkLibraries": false
 }
