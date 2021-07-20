@@ -251,7 +251,7 @@
   #
   # Optionally, "first" and "last" can be followed by ":<offset>" where <offset> is an integer.
   # This moves the truncation point to the right (positive offset) or to the left (negative offset)
-  # relative to the marker. Plain "first" and "last" are equivalent to "first:0" and "last:0"
+  # re;;lative to the marker. Plain "first" and "last" are equivalent to "first:0" and "last:0"
   # respectively.
   typeset -g POWERLEVEL9K_DIR_TRUNCATE_BEFORE_MARKER=false
   # Don't shorten this many last directory segments. They are anchors.

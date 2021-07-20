@@ -1,0 +1,424 @@
+<project version="4">
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="24" selection-start-column="24" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/stonePagamento/java/br/com/rjconsultores/libpagamentosandroid/sdk/pagamento/PagamentoImpl.java">
+          <provider selected="true" editor-type-id="android-source-code" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/rjconsultores/appwrapperlibs/ui/impressao/ImpressaoFragment.java">
+          <provider selected="true" editor-type-id="android-source-code" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="159" selection-start-line="159" selection-end-line="159" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LibImpressaoAndroid/src/maquinas/stone/java/br/com/rjconsultores/libimpressaoandroid/print/Print.java">
+          <provider selected="true" editor-type-id="android-source-code" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getUserModel</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/LibPagamentosAndroid/src/main/java/br/com/rjconsultores/libpagamentosandroid/sdk/provedor/StoneProvedor.java" />
+        <option value="$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/stonePagamento/res/layout/activity_stone.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/stonePagamento/AndroidManifest.xml" />
+        <option value="/opt/android-sdk/sources/android-29/android/content/Intent.java" />
+        <option value="$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/stonePagamento/java/br/com/rjconsultores/libpagamentosandroid/sdk/pagamento/StoneActivity.kt" />
+        <option value="$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/stonePagamento/java/br/com/rjconsultores/libpagamentosandroid/sdk/pagamento/StoneActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/rjconsultores/appwrapperlibs/ui/pagamento/PagamentoFragment.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/LibImpressaoAndroid/build.gradle" />
+        <option value="$PROJECT_DIR$/LibPagamentosAndroid/build.gradle" />
+        <option value="$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/stonePagamento/java/br/com/rjconsultores/libpagamentosandroid/sdk/pagamento/PagamentoImpl.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/rjconsultores/appwrapperlibs/ui/impressao/ImpressaoFragment.java" />
+        <option value="$PROJECT_DIR$/LibImpressaoAndroid/src/maquinas/stone/java/br/com/rjconsultores/libimpressaoandroid/print/Print.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/dev.properties" />
+      </list>
+    </option>
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" x="3" y="29" width="1360" height="736" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AppWrapperLibsAndroid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppWrapperLibsAndroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AppWrapperLibsAndroid" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="AppWrapperLibsAndroid" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="TerminalArrangementManager">
+    <option name="myTabStates">
+      <TerminalTabState tabName="Local" currentWorkingDirectory="$PROJECT_DIR$" commandHistoryFileName="history-" />
+    </option>
+  </component>
+  <component name="ToolWindowManager">
+    <layout>
+      <window_info active="true" x="129" y="100" width="1156" height="454" id="Commit" order="5" type="FLOATING" weight="0.32951945" />
+      <window_info anchor="bottom" id="Services" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Device File Explorer" order="1" side_tool="true" weight="0.32951945" />
+      <window_info anchor="right" id="Android Emulator" order="2" side_tool="true" />
+      <window_info anchor="right" id="Gradle" order="0" weight="0.1685736" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49676377" visible="true" weight="0.24408849" />
+      <window_info id="Structure" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Database Inspector" order="6" />
+      <window_info id="Build Variants" order="1" sideWeight="0.50323623" side_tool="true" visible="true" weight="0.24408849" />
+      <window_info id="Resources Explorer" order="6" />
+      <window_info anchor="right" id="Layout Validation" order="3" />
+      <window_info anchor="bottom" id="Debug" order="11" weight="0.37864077" />
+      <window_info anchor="bottom" id="Layout Inspector" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Problems View" order="2" />
+      <window_info anchor="bottom" id="Run" order="10" weight="0.25566342" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5004617" side_tool="true" weight="0.2390625" />
+      <window_info anchor="bottom" id="Find" order="8" />
+      <window_info anchor="bottom" id="Project Problems" order="5" />
+      <window_info anchor="bottom" id="Build" order="13" sideWeight="0.49953833" visible="true" weight="0.24757281" />
+      <window_info anchor="bottom" x="5" y="51" width="1356" height="712" id="Logcat" order="14" type="WINDOWED" visible="true" weight="0.5109375" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.7799353" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" x="129" y="100" width="1156" height="454" id="Commit" order="5" type="FLOATING" weight="0.32951945" />
+      <window_info anchor="bottom" id="Services" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Device File Explorer" order="1" side_tool="true" weight="0.32951945" />
+      <window_info anchor="right" id="Android Emulator" order="2" side_tool="true" />
+      <window_info anchor="right" id="Gradle" order="0" weight="0.1685736" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49676377" visible="true" weight="0.33943555" />
+      <window_info id="Structure" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Database Inspector" order="6" />
+      <window_info id="Build Variants" order="1" sideWeight="0.50323623" side_tool="true" visible="true" weight="0.33943555" />
+      <window_info id="Resources Explorer" order="6" />
+      <window_info anchor="right" id="Layout Validation" order="3" />
+      <window_info anchor="bottom" id="Debug" order="11" weight="0.37864077" />
+      <window_info anchor="bottom" id="Problems View" order="2" />
+      <window_info anchor="bottom" x="5" y="51" width="1356" height="712" id="Logcat" order="14" type="WINDOWED" visible="true" weight="0.5109375" />
+      <window_info anchor="bottom" id="Run" order="10" weight="0.25566342" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5004617" side_tool="true" weight="0.2390625" />
+      <window_info anchor="bottom" id="Project Problems" order="5" />
+      <window_info anchor="bottom" id="Build" order="13" sideWeight="0.49953833" weight="0.24757281" />
+      <window_info anchor="bottom" id="Layout Inspector" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.7799353" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" />
+    </layout-to-restore>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>Stone.getUserModel(0)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bdf9717ddff177199052226f0cdbc966/jetified-stone-sdk-3.10.0/jars/classes.jar!/stone/utils/GlobalInformations.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bdf9717ddff177199052226f0cdbc966/jetified-stone-sdk-3.10.0/jars/classes.jar!/stone/application/StoneStart.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.ideavimrc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.26/21c84cdf9da108216b5e402611d4af479b60cb8/slf4j-api-1.7.26-sources.jar!/org/slf4j/helpers/NOPLogger.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file:///opt/android-sdk/sources/android-29/android/os/Binder.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/main/java/br/com/rjconsultores/libpagamentosandroid/sdk/util/ViewUtil.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d9ef85c04c7a4891b624a3aeec6eec29/jetified-payment-domain-lib-2.11/jars/classes.jar!/br/com/stone/payment/domain/enums/TransTypeEnum.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/main/java/br/com/rjconsultores/libpagamentosandroid/sdk/provedor/CieloProvedor.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/main/java/br/com/rjconsultores/libpagamentosandroid/sdk/provedor/GetnetProvedor.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/main/java/br/com/rjconsultores/libpagamentosandroid/sdk/provedor/NenhumProvedor.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/main/java/br/com/rjconsultores/libpagamentosandroid/sdk/provedor/PagSeguroProvedor.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/nenhumPagamento/java/br/com/rjconsultores/libpagamentosandroid/sdk/pagamento/PagamentoImpl.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/main/java/br/com/rjconsultores/libpagamentosandroid/sdk/provedor/PayGoProvedor.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/main/java/br/com/rjconsultores/libpagamentosandroid/sdk/provedor/BaseProvedor.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4578cb7fca11e387d42dad350604fa1a/jetified-payment-deeplink-1.12.0/jars/classes.jar!/br/com/stone/posandroid/paymentapp/deeplink/model/TransactionType.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4578cb7fca11e387d42dad350604fa1a/jetified-payment-deeplink-1.12.0/jars/classes.jar!/br/com/stone/posandroid/paymentapp/deeplink/model/PaymentInfo.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d9ef85c04c7a4891b624a3aeec6eec29/jetified-payment-domain-lib-2.11/jars/classes.jar!/br/com/stone/payment/domain/datamodel/PaymentInfo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/rjconsultores/appwrapperlibs/MainActivity.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/main/java/br/com/rjconsultores/libpagamentosandroid/sdk/interfaces/PagamentoListener.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4578cb7fca11e387d42dad350604fa1a/jetified-payment-deeplink-1.12.0/jars/classes.jar!/br/com/stone/posandroid/paymentapp/deeplink/model/PaymentResponse.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/payGoPagamento/java/br/com/rjconsultores/libpagamentosandroid/sdk/pagamento/PagamentoImpl.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/pagSeguroPagamento/java/br/com/rjconsultores/libpagamentosandroid/sdk/pagamento/PagamentoImpl.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/stonePagamento/res/layout/activity_stone.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#1421#1452#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file:///opt/android-sdk/sources/android-29/android/content/Intent.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4578cb7fca11e387d42dad350604fa1a/jetified-payment-deeplink-1.12.0/jars/classes.jar!/br/com/stone/posandroid/paymentapp/deeplink/PaymentDeeplink.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/android-sdk/sources/android-29/android/util/Log.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/stonePagamento/AndroidManifest.xml" />
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/stonePagamento/java/br/com/rjconsultores/libpagamentosandroid/sdk/pagamento/StoneActivity.java" />
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/main/java/br/com/rjconsultores/libpagamentosandroid/sdk/provedor/StoneProvedor.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/rjconsultores/appwrapperlibs/ui/pagamento/PagamentoFragment.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/cieloPagamento/java/br/com/rjconsultores/libpagamentosandroid/sdk/pagamento/PagamentoImpl.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibImpressaoAndroid/src/maquinas/ingenico/java/br/com/rjconsultores/libimpressaoandroid/print/Print.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c1ce694dbc3eeddcac87648e7778689f/jetified-posandroid-ingenico-emvlib-2.11/jars/libs/usdk_api_aidl_v2.0.2.20180310.jar!/com/usdk/apiservice/aidl/UDeviceService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#35524#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibImpressaoAndroid/src/main/java/br/com/rjconsultores/libimpressaoandroid/interfaces/PrintInterface.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file:///opt/android-sdk/sources/android-29/android/content/Context.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9c027927a6b4f7d7a41d417b3b10076d/jetified-stone-sdk-posandroid-3.10.0/jars/classes.jar!/br/com/stone/posandroid/providers/PosPrintProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+          <folding>
+            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2246">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibImpressaoAndroid/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3978">
+          <caret line="221" column="5" selection-start-line="221" selection-start-column="5" selection-end-line="221" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibImpressaoAndroid/src/main/java/br/com/rjconsultores/libimpressaoandroid/PrintBase.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bdf9717ddff177199052226f0cdbc966/jetified-stone-sdk-3.10.0/jars/classes.jar!/stone/application/interfaces/StoneActionCallback.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bdf9717ddff177199052226f0cdbc966/jetified-stone-sdk-3.10.0/jars/classes.jar!/stone/application/interfaces/StoneCallbackInterface.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/android-sdk/sources/android-29/android/os/AsyncTask.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibPagamentosAndroid/src/pagamentos/stonePagamento/java/br/com/rjconsultores/libpagamentosandroid/sdk/pagamento/PagamentoImpl.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LibImpressaoAndroid/src/maquinas/stone/java/br/com/rjconsultores/libimpressaoandroid/print/Print.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/rjconsultores/appwrapperlibs/ui/impressao/ImpressaoFragment.java">
+      <provider selected="true" editor-type-id="android-source-code" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

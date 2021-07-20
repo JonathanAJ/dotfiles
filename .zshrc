@@ -17,8 +17,6 @@ export GRADLE_HOME=/opt/gradle-6.7.1
 
 export FLUTTER_HOME=/opt/flutter
 
-export SNAP=/snap/bin
-
 export PATH=$HOME/bin:/usr/local/bin:$SNAP:$JAVA_HOME/bin:$ANDROID_HOME:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$FLUTTER_HOME/bin:$PATH
 
 export ZSH=$HOME/.oh-my-zsh
@@ -41,11 +39,18 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='vim'
 
-export NVM_DIR="/home/jonathanaj/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-prompt_context(){}
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export NVM_BIN="$NVM_DIR/versions/node/v12.16.1/bin"
+
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Alias
+alias discord=/opt/Discord/Discord

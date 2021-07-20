@@ -6,3 +6,5 @@
 	tool = vimdiff
 [merge]
 	tool = vimdiff
+[core]
+	autocrlf = input

@@ -31,8 +31,21 @@
         "editor.wordBasedSuggestions": false
     },
     "files.associations": {
-        "*.dart": "dart"
+        "*.dart": "dart",
+        "*.md": "markdown"
     },
     "dart.debugExternalLibraries": false,
-    "dart.debugSdkLibraries": false
+    "dart.debugSdkLibraries": false,
+    "terminal.integrated.fontFamily": "FontAwesome, monospace",
+    "workbench.iconTheme": "vscode-icons",
+    "security.workspace.trust.untrustedFiles": "open",
+    "vim.vimrc.enable": true,
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-Tab>": false, 
+        "<C-b>": false, 
+        "<C-d>": false, 
+        "<C-w>": false,
+    },
+    "explorer.confirmDragAndDrop": false
 }

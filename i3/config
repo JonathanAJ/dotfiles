@@ -186,21 +186,6 @@ mode 	$resize {
         bindsym $mod+r mode "default"
 }
 
-# Choose custom app
-set	    $app "  [A]NDROID | [D]ISCORD, [B]ROWSER, [F]ILES"
-bindsym $mod+a mode $app
-mode 	$app {
-        # my custom apps
-	    bindsym a exec "/opt/android-studio/bin/studio.sh", mode "default"
-	    bindsym d exec "discord", [class="discord"] focus, mode "default"
-	    bindsym b exec "sensible-browser", mode "default"
-        bindsym f exec "nemo", [class="Nemo"] focus, mode "default"
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+a mode "default"
-}
-
 ##################### CUSTOM FLOATING ##### 
 
 for_window [window_role="pop-up"] floating enable
@@ -274,22 +259,22 @@ exec --no-startup-id        "pulseaudio --start"
 exec --no-startup-id        "numlockx on"
 
 # Start Discord if work time
-exec --no-startup-id        "$SCRIPT_DIR/is_not_work_time || discord"
-
-# Start connman ui
-exec --no-startup-id        "cmst --minimized"
+exec --no-startup-id        "SCRIPT_DIR/is_not_work_time || /opt/Discord/Discord"
 
 # Sound Pulseaudio
 exec --no-startup-id        "pasystray"
 
+# NetworkManager
+exec --no-startup-id        "nm-applet"
+
 ##########################  VOLUME CONTROL ###########################3
 
 # Path to volume control, without trailing slash
-set $volumePath     /usr/bin/i3-volume
-set $volumeArgs     -np -t i3blocks -u SIGRTMIN+10 -s alsa_output.pci-0000_00_1b.0.analog-stereo
+set $volumePath              /usr/bin/i3-volume
+set $volumeArgs              -np -t i3blocks -u SIGRTMIN+10 -s alsa_output.pci-0000_00_1b.0.analog-stereo
 
-bindsym $mod + plus     exec $volumePath $volumeArgs up 5 
-bindsym $mod + minus    exec $volumepath $volumeArgs down 5
+bindsym $mod + plus          exec $volumePath $volumeArgs up 5 
+bindsym $mod + minus         exec $volumepath $volumeArgs down 5
 bindsym XF86AudioMute        exec $volumepath -mn -t $statuscmd -u $statussig
 
 ##################### ASSIGN WORKSPACES ####################
@@ -330,10 +315,10 @@ client.background       $color_primary
 
 # i3-gaps
 for_window [class="^.*"] border pixel 1.5
-gaps inner 4
-gaps outer 1
-smart_borders on
-smart_gaps inverse_outer
+#gaps inner 4
+#gaps outer 1
+#smart_borders on
+#smart_gaps inverse_outer
 
 
 ###################### STATUS BAR ##########################
@@ -343,14 +328,12 @@ bar {
         # properties
         position 		        top
         i3bar_command           i3bar -t
-        status_command 		    i3blocks
-	    tray_output             primary
+        status_command          i3blocks                              
+        tray_output             primary
 	    separator_symbol        " "
     	workspace_buttons       yes
     	strip_workspace_numbers yes	
     	font $custom_font $custom_font_light $custom_font_size 
-        # variables
-	    status_command SCRIPT_DIR=$SCRIPT_DIR i3blocks                              
 	    # styles
         colors {
         	background  	    $transparency 

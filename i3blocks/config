@@ -15,31 +15,31 @@ full_text=
 
 # depends - mpstat
 [cpu_usage]
-command=$SCRIPT_DIR/cpu_usage
+command=~/.scripts/cpu_usage
 label= 
 interval=3
 min_width=CPU: 100.00%
 
 [memory]
-command=$SCRIPT_DIR/memory
+command=~/.scripts/memory
 label=  
 interval=3
 
 # depends - alsa-utils
 [volume]
-command=$SCRIPT_DIR/volume
+command=~/.scripts/volume
 label= 
 instance=Master
 interval=once
 signal=10
 
 [backlight]
-command=$SCRIPT_DIR/backlight
+command=~/.scripts/backlight
 label= 
 interval=20
 
 [battery]
-command=$SCRIPT_DIR/battery
+command=~/.scripts/battery
 markup=pango
 interval=1
 
