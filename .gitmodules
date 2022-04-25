@@ -1,6 +1,0 @@
-[submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
-[submodule "vim/pack/themes/start/dracula"]
-	path = vim/pack/themes/start/dracula
-	url = https://github.com/dracula/vim.git
