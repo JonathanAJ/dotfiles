@@ -52,5 +52,7 @@ export NVM_BIN="$NVM_DIR/versions/node/v12.16.1/bin"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Alias
-alias discord=/opt/Discord/Discord
+
+# Add JBang to environment
+alias j!=jbang
+export PATH="$HOME/.jbang/bin:$PATH"

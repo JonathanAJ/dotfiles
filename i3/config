@@ -203,6 +203,9 @@ bindsym $mod+o      exec --no-startup-id "pavucontrol"
 # Print
 bindsym Print 		exec --no-startup-id "flameshot gui"
 
+# Keyboard Note Off 
+bindsym $mod+F10 	exec --no-startup-id "$SCRIPT_DIR/keyboard_note_off"
+
 # Screen of/on
 bindsym $mod+F11 	exec --no-startup-id "$SCRIPT_DIR/screen_off"
 
@@ -259,7 +262,7 @@ exec --no-startup-id        "pulseaudio --start"
 exec --no-startup-id        "numlockx on"
 
 # Start Discord if work time
-exec --no-startup-id        "SCRIPT_DIR/is_not_work_time || /opt/Discord/Discord"
+exec --no-startup-id        "SCRIPT_DIR/is_not_work_time || discord"
 
 # Sound Pulseaudio
 exec --no-startup-id        "pasystray"
@@ -314,7 +317,7 @@ client.placeholder      $color_primary 		    $color_primary 		    $color_text
 client.background       $color_primary
 
 # i3-gaps
-for_window [class="^.*"] border pixel 1.5
+for_window [class="^.*"] border pixel 1
 #gaps inner 4
 #gaps outer 1
 #smart_borders on

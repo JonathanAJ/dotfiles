@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ -f /tmp/keyboard_note_off ]; then
+  xinput reattach 18 3 && rm /tmp/keyboard_note_off
+else
+  xinput float 18 && touch /tmp/keyboard_note_off
+fi
