@@ -131,7 +131,7 @@ function prepare_launcher() {
         -hlfg "${HLFG_COLOR}" -hlbg "${HLBG_COLOR}")
     launcher_exe="rofi"
     launcher_options=(-dmenu -i -lines "${menu_nrows}" -p "${ROFI_TEXT}" \
-        "${rofi_colors[@]}" "${ROFI_OPTIONS[@]}" -theme "~/.config/rofi/power-theme" )
+        "${rofi_colors[@]}" "${ROFI_OPTIONS[@]}" -theme "~/.config/rofi/themes/power-theme" )
   fi
 }
 

@@ -222,7 +222,7 @@ bindsym $mod+t 		exec --no-startup-id "i3-sensible-terminal"
 bindsym $mod+Return exec --no-startup-id "i3-sensible-terminal"
 
 # Start dmenu (a program launcher)
-bindsym $mod+d 		exec --no-startup-id "rofi -show drun"
+bindsym $mod+d 		exec --no-startup-id "rofi -show drun -theme ~/.config/rofi/themes/config.rasi"
 
 # Arandr
 bindsym $mod+p      exec --no-startup-id "arandr"
@@ -249,14 +249,14 @@ exec_always --no-startup-id         "setxkbmap -model abnt2 -layout br -variant 
 # fibonnacci
 exec_always --no-startup-id         "$SCRIPT_DIR/layout_fibonnaci"
 
+# pulseaudio
+exec_always --no-startup-id         "systemctl --user restart pulseaudio.socket"
+
 
 ######### ALWAYS STARTUP i3
 
 # brightness hdmi
 exec --no-startup-id        "xrandr --output HDMI2 --brightness 1"
-
-# pulseaudio
-exec --no-startup-id        "pulseaudio --start"
 
 # Start numlock on
 exec --no-startup-id        "numlockx on"

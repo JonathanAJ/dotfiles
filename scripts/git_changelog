@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+#
+# -*- mode: shell-script -*-
+
+git fetch --all --tags --force
+
+echo "Changelog beetween: $1...$2"
+
+git log --oneline $1...$2 --no-merges --format=format:"- **%s**%n  - %h - Autor: %aE - Data: %ci %n#" > /tmp/txt.log
+    clipcopy /tmp/txt.log
+    mousepad /tmp/txt.log

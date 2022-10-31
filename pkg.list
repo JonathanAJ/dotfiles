@@ -2,10 +2,8 @@ xorg \
 xorg-server \
 xorg-xinit \
 xorg-apps \
-connman \
-connman-gtk \
-connman-runit \
 i3 \
+i3blocks \
 xf86-video-intel \
 python3 \
 python3-pip \
@@ -29,3 +27,6 @@ zsh \
 android-udev \
 android-tools \
 pptpclient \
+sysstat \
+acpi \
+

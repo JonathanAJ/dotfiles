@@ -7,7 +7,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 
-export JAVA_HOME=/opt/jdk-8
+export MY_SCRIPTS=$HOME/.scripts/
 
 export ANDROID_HOME=/opt/android-sdk
 
@@ -17,16 +17,19 @@ export GRADLE_HOME=/opt/gradle-6.7.1
 
 export FLUTTER_HOME=/opt/flutter
 
-export PATH=$HOME/bin:/usr/local/bin:$SNAP:$JAVA_HOME/bin:$ANDROID_HOME:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$FLUTTER_HOME/bin:$PATH
-
 export ZSH=$HOME/.oh-my-zsh
+
+export PATH=$HOME/bin:/usr/local/bin:$SNAP:$ANDROID_HOME:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$FLUTTER_HOME/bin:$PATH
+
+export PATH=$MY_SCRIPTS:$PATH
+
 
 # My Theme
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Enable correction
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # My plugins
 plugins=(
@@ -39,20 +42,31 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='vim'
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export NVM_BIN="$NVM_DIR/versions/node/v12.16.1/bin"
 
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+######################## Alias Definition ########################
+
+
+# Clean gradle much logs files
+alias clean_gradle="find ~/.gradle -name '*.log' -exec rm {} \;"
+alias clean_cache="find ~/.cache -depth -type f -mtime +365 -delete"
+
 
 # Add JBang to environment
 alias j!=jbang
-export PATH="$HOME/.jbang/bin:$PATH"

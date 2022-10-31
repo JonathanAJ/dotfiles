@@ -45,5 +45,5 @@
     ~/.screenlayout/monitor-left.sh: screenlayout/monitor-left.sh
     ~/.vim: vim
 
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]
+      #- shell:
+      # - [git submodule update --init --recursive, Installing submodules]

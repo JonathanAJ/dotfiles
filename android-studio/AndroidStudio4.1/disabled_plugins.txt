@@ -1,3 +1,0 @@
-com.chrisrm.idea.MaterialThemeUI
-com.intellij.plugins.vscodekeymap
-org.intellij.plugins.markdown

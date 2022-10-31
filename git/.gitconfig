@@ -10,3 +10,5 @@
 	autocrlf = input
 [safe]
 	directory = *
+	directory = /dados/Developer/dotfiles
+	directory = /dados/Developer/dotfiles
