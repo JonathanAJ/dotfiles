@@ -2,10 +2,14 @@
 #
 # -*- mode: shell-script -*-
 
-git fetch --all --tags --force
+ref=$3
+if [ -z "$ref" ]
+  then
+    ref="--all"
+fi
 
-echo "Changelog beetween: $1...$2"
-
+echo "Changelog beetween: $1...$2 on $ref"
+git fetch --tags --force $ref
 git log --oneline $1...$2 --no-merges --format=format:"- **%s**%n  - %h - Autor: %aE - Data: %ci %n#" > /tmp/txt.log
-    clipcopy /tmp/txt.log
-    mousepad /tmp/txt.log
+clipcopy /tmp/txt.log
+mousepad /tmp/txt.log

@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+#
+# -*- mode: shell-script -*-
+
+echo "GitSubTreePush:  $1 into $2"
+git subtree push --prefix $1 $1 $2 

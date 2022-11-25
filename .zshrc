@@ -15,11 +15,9 @@ export ANDROID_SDK_ROOT=$ANDROID_HOME
 
 export GRADLE_HOME=/opt/gradle-6.7.1
 
-export FLUTTER_HOME=/opt/flutter
-
 export ZSH=$HOME/.oh-my-zsh
 
-export PATH=$HOME/bin:/usr/local/bin:$SNAP:$ANDROID_HOME:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$FLUTTER_HOME/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$SNAP:$ANDROID_HOME:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$PATH
 
 export PATH=$MY_SCRIPTS:$PATH
 
@@ -67,6 +65,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 alias clean_gradle="find ~/.gradle -name '*.log' -exec rm {} \;"
 alias clean_cache="find ~/.cache -depth -type f -mtime +365 -delete"
 
+# Add flutter fvm alias
+alias flutter="fvm flutter"
+alias dart="fvm dart"
 
 # Add JBang to environment
 alias j!=jbang
