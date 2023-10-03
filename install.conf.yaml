@@ -6,6 +6,9 @@
 - clean: ['~']
 
 - link:
+    # dados
+    ~/Developer: /dados/Developer/
+    /opt: /dados/opt/
     # files
     ~/.bashrc: .bashrc
     ~/.bash_profile: .bash_profile
@@ -16,12 +19,14 @@
     ~/.p10k.zsh: .p10k.zsh
     ~/.xinitrc: .xinitrc
     ~/.wallpaper.jpg: .wallpaper.jpg
-
+ 
     # config
     ~/.config/i3/config: i3/config
     ~/.config/dunst/dunstrc: dunst/dunstrc
     ~/.config/rofi/config.rasi: rofi/config.rasi
+    ~/.config/rofi/themes/config.rasi: rofi/config.rasi
     ~/.config/rofi/power-theme.rasi: rofi/power-theme.rasi
+    ~/.config/rofi/themes/power-theme.rasi: rofi/power-theme.rasi
     ~/.config/i3blocks/config: i3blocks/config
     ~/.config/htop/htoprc: htop/htoprc
     ~/.config/kitty/kitty.conf: kitty/kitty.conf
@@ -45,5 +50,19 @@
     ~/.screenlayout/monitor-left.sh: screenlayout/monitor-left.sh
     ~/.vim: vim
 
-      #- shell:
-      # - [git submodule update --init --recursive, Installing submodules]
+- shell:
+  -
+    description: Insert Password | Making zsh the default shell
+    command: chsh -s $(which zsh)
+    stdin: true
+  - 
+    description: Config Syntax Highlight ZSH Plugin
+    command: git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  -
+    description: Config Suggestions ZSH Plugin
+    command: git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  - 
+    description: Config PowerLevel10k Theme
+    command: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  -
+    command: source ~/.zshrc

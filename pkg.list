@@ -6,7 +6,8 @@ i3 \
 i3blocks \
 xf86-video-intel \
 python3 \
-python3-pip \
+python-pip \
+python3-i3ipc \
 numlockx \
 dunst \
 rofi  \
@@ -29,4 +30,4 @@ android-tools \
 pptpclient \
 sysstat \
 acpi \
-
+lxappearance \

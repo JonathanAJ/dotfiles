@@ -216,10 +216,10 @@ bindsym $mod+F12 	exec --no-startup-id "$SCRIPT_DIR/keyboard_light"
 bindsym $mod+Escape	exec --no-startup-id "$SCRIPT_DIR/shutdown"
 
 # Start a Terminal
-bindsym $mod+t 		exec --no-startup-id "i3-sensible-terminal"
+bindsym $mod+t 		exec --no-startup-id "kitty"
 
 # terminal
-bindsym $mod+Return exec --no-startup-id "i3-sensible-terminal"
+bindsym $mod+Return exec --no-startup-id "kitty"
 
 # Start dmenu (a program launcher)
 bindsym $mod+d 		exec --no-startup-id "rofi -show drun -theme ~/.config/rofi/themes/config.rasi"
@@ -250,7 +250,7 @@ exec_always --no-startup-id         "setxkbmap -model abnt2 -layout br -variant 
 exec_always --no-startup-id         "$SCRIPT_DIR/layout_fibonnaci"
 
 # pulseaudio
-exec_always --no-startup-id         "systemctl --user restart pulseaudio.socket"
+#exec_always --no-startup-id         "systemctl --user restart pulseaudio.socket"
 
 
 ######### ALWAYS STARTUP i3
@@ -262,13 +262,16 @@ exec --no-startup-id        "xrandr --output HDMI2 --brightness 1"
 exec --no-startup-id        "numlockx on"
 
 # Start Discord if work time
-exec --no-startup-id        "SCRIPT_DIR/is_not_work_time || discord"
+exec --no-startup-id        "/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=discord com.discordapp.Discord"
 
 # Sound Pulseaudio
 exec --no-startup-id        "pasystray"
 
 # NetworkManager
 exec --no-startup-id        "nm-applet"
+
+#Arandr screen left
+exec --no-startup-id        "~/.screenlayout/monitor-left.sh"
 
 ##########################  VOLUME CONTROL ###########################3
 

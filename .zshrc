@@ -17,7 +17,11 @@ export GRADLE_HOME=/opt/gradle-6.7.1
 
 export ZSH=$HOME/.oh-my-zsh
 
+export FLUTTER=/opt/flutter/bin 
+
 export PATH=$HOME/bin:/usr/local/bin:$SNAP:$ANDROID_HOME:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$PATH
+
+export PATH=$HOME/.pub-cache/bin:$FLUTTER:$PATH
 
 export PATH=$MY_SCRIPTS:$PATH
 
@@ -39,8 +43,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR='vim'
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -66,8 +68,8 @@ alias clean_gradle="find ~/.gradle -name '*.log' -exec rm {} \;"
 alias clean_cache="find ~/.cache -depth -type f -mtime +365 -delete"
 
 # Add flutter fvm alias
-alias flutter="fvm flutter"
-alias dart="fvm dart"
+#alias flutter="fvm flutter"
+#alias dart="fvm dart"
 
 # Add JBang to environment
 alias j!=jbang

@@ -10,6 +10,5 @@ fi
 
 echo "Changelog beetween: $1...$2 on $ref"
 git fetch --tags --force $ref
-git log --oneline $1...$2 --no-merges --format=format:"- **%s**%n  - %h - Autor: %aE - Data: %ci %n#" > /tmp/txt.log
-clipcopy /tmp/txt.log
+git log --oneline $1...$2 --no-merges --format=format:"#%n- **%s**%n  - %h - Autor: %aE - Data: %ci %n" > /tmp/txt.log
 mousepad /tmp/txt.log
