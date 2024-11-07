@@ -2,7 +2,9 @@
 
 ############################  VARIABLES  ########################## 
 
-## Any
+## Utils
+
+## mod is "windows" button
 set $mod  Mod4
 set $mod2 Mod1
 
@@ -15,7 +17,7 @@ set $SCRIPT_DIR ~/.scripts/
 set $custom_font            pango: SF Pro Display, Font Awesome 
 set $custom_font_light      Light
 set $custom_font_regular    Regular
-set $custom_font_size       11
+set $custom_font_size       12
 
 ## Colors
 set_from_resource $transparency      color.transparency
@@ -90,11 +92,11 @@ bindsym $mod+w kill
 
 ################################ WORKSPACES ######################
 
-set $ws1 " 1   srch"
-set $ws2 " 2   devs" 
-set $ws3 " 3   util"
-set $ws4 " 4   comm"
-set $ws5 " 5   mdia"
+set $ws1 " 1   serch"
+set $ws2 " 2   devps" 
+set $ws3 " 3   utils"
+set $ws4 " 4   chats"
+set $ws5 " 5   media"
 set $ws6 " 6"
 set $ws7 " 7"
 set $ws8 " 8"
@@ -169,6 +171,10 @@ bindsym $mod2+Shift+5 move container to workspace $ws15
 bindsym $mod+Tab            workspace back_and_forth 
 bindsym $mod+Shift+Tab      workspace next
 
+# move workspace to monitor left in loop
+bindsym $mod+m move workspace to output left
+
+
 ##################### MODES ##############################
 
 # Resize window
@@ -225,7 +231,8 @@ bindsym $mod+Return exec --no-startup-id "kitty"
 bindsym $mod+d 		exec --no-startup-id "rofi -show drun -theme ~/.config/rofi/themes/config.rasi"
 
 # Arandr
-bindsym $mod+p      exec --no-startup-id "arandr"
+bindsym $mod+p       exec --no-startup-id "arandr"
+bindsym $mod+Shift+p exec --no-startup-id "~/.screenlayout/monitor-left.sh"
 
 ###################### AUTOSTART ###########################
 
@@ -298,8 +305,7 @@ for_window [class="Postman"]                move to workspace $ws3
 # 4) commucation
 for_window [class="discord"]                move to workspace $ws4 layout tabbed
 for_window [class="Geary"]                  move to workspace $ws4 layout tabbed
-for_window [class="TelegramDesktop"]        move to workspace $ws4 layout tabbed
-for_window [class="telegram-desktop"]       move to workspace $ws4 layout tabbed
+for_window [class="Telegram*"]        move to workspace $ws4 layout tabbed
 
 # 5) media
 for_window [class="vlc"]                    move to workspace $ws5
@@ -320,11 +326,11 @@ client.placeholder      $color_primary 		    $color_primary 		    $color_text
 client.background       $color_primary
 
 # i3-gaps
-for_window [class="^.*"] border pixel 1
-#gaps inner 4
-#gaps outer 1
-#smart_borders on
-#smart_gaps inverse_outer
+for_window [class="^.*"] border pixel 2
+gaps inner 0
+gaps outer 0
+smart_borders on
+smart_gaps inverse_outer
 
 
 ###################### STATUS BAR ##########################
@@ -342,7 +348,7 @@ bar {
     	font $custom_font $custom_font_light $custom_font_size 
 	    # styles
         colors {
-        	background  	    $transparency 
+            background  	    $transparency 
         	statusline  	    $color_text
         	separator	        $color_text
         	focused_workspace   $transparency           $transparency           $color_secondary	

@@ -21,7 +21,9 @@ export FLUTTER=/opt/flutter/bin
 
 export PATH=$HOME/bin:/usr/local/bin:$SNAP:$ANDROID_HOME:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$PATH
 
-export PATH=$HOME/.pub-cache/bin:$FLUTTER:$PATH
+export PATH=$HOME/.pub-cache/bin:$PATH
+
+export PATH=$FLUTTER:$PATH
 
 export PATH=$MY_SCRIPTS:$PATH
 
@@ -65,7 +67,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Clean gradle much logs files
 alias clean_gradle="find ~/.gradle -name '*.log' -exec rm {} \;"
-alias clean_cache="find ~/.cache -depth -type f -mtime +365 -delete"
+alias clean_cache="find ~/.cache -depth -type f -mtime +180 -delete"
 
 # Add flutter fvm alias
 #alias flutter="fvm flutter"
@@ -73,3 +75,7 @@ alias clean_cache="find ~/.cache -depth -type f -mtime +365 -delete"
 
 # Add JBang to environment
 alias j!=jbang
+
+alias flutter="fvm flutter"
+alias dart="fvm dart"
+

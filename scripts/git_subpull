@@ -3,4 +3,4 @@
 # -*- mode: shell-script -*-
 
 echo "GitSubTreePull: $1 into $2"
-git subtree pull --prefix $1 $1 $2 --squash
+git subtree pull --prefix $1 $1 $2 
