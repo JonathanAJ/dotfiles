@@ -130,13 +130,3 @@ then
 fi
 
 
-
-export PATH=/home/jonathan.jardim@bh01.local/bin:$PATH
-
-[[ -e "/home/jonathan.jardim@bh01.local/lib/oracle-cli/lib/python3.12/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/jonathan.jardim@bh01.local/lib/oracle-cli/lib/python3.12/site-packages/oci_cli/bin/oci_autocomplete.sh"
-
-
-# Added by Antigravity CLI installer
-export PATH="/home/jonathan.jardim@bh01.local/.local/bin:$PATH"
-
-export XDG_MENU_PREFIX=gnome-

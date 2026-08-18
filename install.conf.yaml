@@ -8,7 +8,6 @@
 - link:
     # dados
     ~/Developer: /dados/Developer/
-    /opt: /dados/opt/
     # files
     ~/.bashrc: .bashrc
     ~/.bash_profile: .bash_profile
@@ -64,5 +63,8 @@
   - 
     description: Config PowerLevel10k Theme
     command: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  -
+    description: Config symlink to dados opt
+    command: ln -s /dados/opt/* /opt/
   -
     command: source ~/.zshrc

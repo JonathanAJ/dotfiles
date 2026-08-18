@@ -269,7 +269,7 @@ exec --no-startup-id        "xrandr --output HDMI2 --brightness 1"
 exec --no-startup-id        "numlockx on"
 
 # Start Discord if work time
-exec --no-startup-id        "/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=discord com.discordapp.Discord"
+exec --no-startup-id        "discord"
 
 # Sound Pulseaudio
 exec --no-startup-id        "pasystray"

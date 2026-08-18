@@ -25,7 +25,31 @@
 [core]
     autocrlf = input
     editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [safe]
 	directory = *
 	directory = /dados/Developer/dotfiles
 	directory = /dados/Developer/dotfiles
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[diff-so-fancy]
+	first-run = false

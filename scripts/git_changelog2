@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# Ensure script stops on errors
+set -e
+
+# Function to display an error message and exit
+error_exit() {
+  echo "$1" >&2
+  exit 1
+}
+
+# Check if Git is available
+command -v git >/dev/null 2>&1 || error_exit "Git is not installed or not available in PATH."
+
+# Update Local tags from remote
+git fetch --all --tags --force --prune --prune-tags
+
+# Get the current tag checkout
+current_tag=$(git describe --tags)
+if [ -z "$current_tag" ]; then
+  error_exit "No tags found in the repository. Please ensure your repository uses tags."
+fi
+
+# Get the previous tag relative the current tag
+
+changelog_file="/tmp/CHANGELOG-$RANDOM.md"
+
+(git tag --sort=-version:refname) > $changelog_file
+
+# Determine if the search tag word ends with "RC" (Release Candidate)
+if [[ "$current_tag" =~ RC$ ]]; then
+  # Search for the tag and get the next tag
+  previous_tag=$(awk -v word="$current_tag" 'BEGIN {found=0} {if (found) {print $0; exit} if ($0 == word) found=1}' "$changelog_file")
+else
+  # Search only for next tag word not ending with "RC"
+  previous_tag=$(awk -v word="$current_tag" 'BEGIN {found=0} {if (found && $0 !~ /RC$/) {print $0; exit} if ($0 == word) found=1}' "$changelog_file")
+fi
+
+# Check if a next word tag was found
+if [ -z "$previous_tag" ]; then
+  error_exit "No Tag found before '$current_tag'."
+else
+  echo "Generating... CHANGELOG: $current_tag -> $previous_tag"
+  echo "Saving....... CHANGELOG: $changelog_file"
+fi
+
+echo "
+# CHANGELOG: $current_tag -> $previous_tag 
+
+$(git log --oneline $previous_tag...$current_tag --no-merges --format=format:"#%n- **%s**%n  - %h - Autor: %aE - Data: %ci     %n")
+" > $changelog_file
+
+mousepad $changelog_file &
+
+
+
+
+
+
+
+
+

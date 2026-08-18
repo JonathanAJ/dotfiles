@@ -6,7 +6,7 @@ i3 \
 i3blocks \
 xf86-video-intel \
 python3 \
-python-pip \
+python3-pip \
 python3-i3ipc \
 numlockx \
 dunst \
@@ -31,3 +31,4 @@ pptpclient \
 sysstat \
 acpi \
 lxappearance \
+fonts-font-awesome

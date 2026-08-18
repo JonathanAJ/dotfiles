@@ -27,6 +27,7 @@ export PATH=$FLUTTER:$PATH
 
 export PATH=$MY_SCRIPTS:$PATH
 
+export XDG_MENU_PREFIX=gnome-
 
 # My Theme
 #ZSH_THEME="robbyrussell"
@@ -66,16 +67,38 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 
 # Clean gradle much logs files
-alias clean_gradle="find ~/.gradle -name '*.log' -exec rm {} \;"
-alias clean_cache="find ~/.cache -depth -type f -mtime +180 -delete"
-
-# Add flutter fvm alias
-#alias flutter="fvm flutter"
-#alias dart="fvm dart"
+alias exec_clean_gradle="find ~/.gradle -name '*.log' -exec rm {} \;"
+alias exec_clean_cache="find ~/.cache -depth -type f -mtime +180 -delete"
 
 # Add JBang to environment
-alias j!=jbang
+alias j!="jbang"
 
 alias flutter="fvm flutter"
 alias dart="fvm dart"
 
+# Git
+alias gpl="git pull origin "
+alias gplm="git pull origin master"
+alias gpld="git pull origin developer"
+
+# Server files
+alias exec_server="python3 -m http.server 8080"
+
+# View PID process from a window
+alias exec_viewpid="xprop | awk '/PID/ {print $3}'"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/jonathan.jardim@bh01.local/.dart-cli-completion/zsh-config.zsh ]] && . /home/jonathan.jardim@bh01.local/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+
+# FVM
+export PATH="/home/jonathan.jardim@bh01.local/.fvm_flutter/bin:$PATH"
+
+# opencode
+export PATH=/home/jonathan.jardim@bh01.local/.opencode/bin:$PATH
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/jonathan.jardim@bh01.local/.local/bin:$PATH"
