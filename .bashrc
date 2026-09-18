@@ -140,3 +140,4 @@ export PATH=/home/jonathan.jardim@bh01.local/bin:$PATH
 export PATH="/home/jonathan.jardim@bh01.local/.local/bin:$PATH"
 
 export XDG_MENU_PREFIX=gnome-
+alias vim='nvim'

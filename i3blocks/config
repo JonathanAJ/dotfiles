@@ -43,6 +43,12 @@ command=~/.scripts/battery
 markup=pango
 interval=1
 
+[vpn]
+command=~/.scripts/vpn
+interval=5
+markup=pango
+
 [shutdown_menu]
 full_text=
-command=$SCRIPT_DIR/shutdown
+command=~/.scripts/shutdown
+

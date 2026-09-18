@@ -1,0 +1,69 @@
+#!/usr/bin/env python3
+import os
+import subprocess
+from typing import Optional
+
+TARGET_PROFILE_ID: str = "47be5275ce8b5ae4"
+
+
+def query_pritunl_profile_active(profile_id: str) -> bool:
+    """Verifica se o perfil da VPN está conectado e ativo.
+    """
+    # Consulta a lista do pritunl-client buscando o perfil e o estado Active
+    exec_result = subprocess.run(
+        ["pritunl-client", "list"],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if exec_result.returncode != 0:
+        return False
+
+    return profile_id in exec_result.stdout and "Active" in exec_result.stdout
+
+
+def execute_vpn_state_transition(profile_id: str, is_active: bool) -> None:
+    """Dispara o comando pritunl-client para alternar o estado da VPN.
+    """
+    # Se ja estiver ativa executamos o stop, caso contrario iniciamos a conexao
+    command_action: str = "stop" if is_active else "start"
+    subprocess.run(
+        ["pritunl-client", command_action, profile_id],
+        capture_output=True,
+        check=False,
+    )
+
+
+def format_indicator_markup(is_active: bool) -> str:
+    """Gera a saída em pango markup indicando o estado atual da VPN.
+    """
+    if is_active:
+        return "<span foreground='#50fa7b'> VPN</span>"
+    return "<span foreground='#ff5555'> VPN</span>"
+
+
+def run_vpn_block_cycle(
+    profile_id: str,
+    click_event: Optional[str],
+) -> None:
+    """Controla o ciclo de vida do bloco i3blocks tratando clique e status.
+    """
+    current_active_status: bool = query_pritunl_profile_active(profile_id)
+
+    # Dispara a alternância de estado apenas quando o bloco recebe um clique
+    if click_event:
+        execute_vpn_state_transition(profile_id, current_active_status)
+        current_active_status = not current_active_status
+
+    print(format_indicator_markup(current_active_status))
+
+
+def main() -> None:
+    """Ponto de entrada do script para o bloco do i3blocks.
+    """
+    received_button: Optional[str] = os.environ.get("BLOCK_BUTTON")
+    run_vpn_block_cycle(TARGET_PROFILE_ID, received_button)
+
+
+if __name__ == "__main__":
+    main()

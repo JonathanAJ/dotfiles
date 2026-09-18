@@ -102,3 +102,4 @@ export PATH=/home/jonathan.jardim@bh01.local/.opencode/bin:$PATH
 
 # Added by Antigravity CLI installer
 export PATH="/home/jonathan.jardim@bh01.local/.local/bin:$PATH"
+alias vim='nvim'
